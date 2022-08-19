@@ -1,0 +1,12 @@
+services:
+  rubric_auth:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - rb_auth
+  rb_auth:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password123
+      - MYSQL_DATABASE=rubric_auth
